@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "orchid-rag-neo4j"
+description = "Neo4j graph-store backend plugin for the Orchid AI framework"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["ai", "agents", "rag", "neo4j", "graph"]
+dependencies = [
+    "orchid-ai>=1.8.2",
+    "neo4j>=5.15.0",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.25.0",
+    "pytest-cov>=6.0",
+    "ruff>=0.9.0",
+]
+
+[project.entry-points."orchid.graph_store_backends"]
+neo4j = "orchid_rag_neo4j:_register"
+
+[project.urls]
+Homepage = "https://github.com/gadz82/orchid-rag-neo4j"
+Issues = "https://github.com/gadz82/orchid-rag-neo4j/issues"
+
+[tool.hatch.version]
+path = "orchid_rag_neo4j/__init__.py"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+testpaths = ["tests"]
