@@ -19,7 +19,7 @@ classifiers = [
 ]
 keywords = ["ai", "agents", "rag", "neo4j", "graph"]
 dependencies = [
-    "orchid-ai>=1.8.3",
+    "orchid-ai>=1.8.6",
     "neo4j>=5.15.0",
 ]
 dynamic = ["version"]
