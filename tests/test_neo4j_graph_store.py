@@ -66,6 +66,7 @@ class TestConstruction:
             # Force re-import of the module so it picks up the mocked neo4j
             import importlib
             import orchid_rag_neo4j.neo4j_graph as ng_mod
+
             importlib.reload(ng_mod)
             store = ng_mod.Neo4jGraphStore(url="bolt://x", username="u", password="p")
             assert store is not None
