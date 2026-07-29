@@ -10,7 +10,7 @@ import logging
 
 from .neo4j_graph import Neo4jGraphStore
 
-__version__ = "1.0.3"
+__version__ = "1.0.4"
 __all__ = ["Neo4jGraphStore"]
 
 logger = logging.getLogger(__name__)
