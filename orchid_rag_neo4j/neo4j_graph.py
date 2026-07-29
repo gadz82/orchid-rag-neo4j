@@ -21,14 +21,7 @@ from orchid_ai.core.scopes import OrchidRAGScope
 
 
 def _scope_key(scope: OrchidRAGScope) -> str:
-    return "|".join(
-        (
-            scope.tenant_id,
-            scope.user_id,
-            scope.chat_id,
-            scope.agent_id,
-        )
-    )
+    return f"{scope.tenant_id}|{scope.user_id}|{scope.chat_id}|{scope.agent_id}"
 
 
 class Neo4jGraphStore(OrchidGraphStore):
