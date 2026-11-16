@@ -24,6 +24,7 @@ def _scope_key(scope: OrchidRAGScope) -> str:
     return f"{scope.tenant_id}|{scope.user_id}|{scope.chat_id}|{scope.agent_id}"
 
 
+# ORCHID-MEM: 01a1a0c1-dc3d-7fbb-aa0b-0844753cc97d — Neo4j graph store for GraphRAG
 class Neo4jGraphStore(OrchidGraphStore):
     """Cypher-free knowledge-graph store backed by Neo4j.
 
